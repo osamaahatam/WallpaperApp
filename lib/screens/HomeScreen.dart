@@ -1,7 +1,6 @@
 
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:wallpaperapp/model/wallpaper.dart';
 import 'package:wallpaperapp/screens/searchView.dart';
 import 'package:wallpaperapp/widgets/banner_text.dart';
@@ -31,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
    var response = await http.get(url,headers: {"Authorization":apiKEY}); 
   Map<String,dynamic> jsonData = jsonDecode(response.body);
   jsonData["photos"].forEach((element){
-    PhotosModel photosModel =new PhotosModel();
+    PhotosModel photosModel =PhotosModel();
     photosModel=PhotosModel.fromMap(element);
     photos.add(photosModel);
    });
@@ -109,6 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                 },
             )),
+            //returning the photos
             Wallpaper(photos: photos,context: context),
           ],
         ),

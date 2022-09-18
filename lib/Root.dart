@@ -15,7 +15,6 @@ class AppFile extends StatelessWidget {
           Theme.of(context).textTheme,
           ), 
       primarySwatch: Colors.grey,
-      
       ),
       home: const HomeScreen(),
     );

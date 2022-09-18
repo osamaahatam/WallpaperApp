@@ -18,7 +18,7 @@ class CategoreScrenn extends StatefulWidget {
 }
 
 class _CategoreScrennState extends State<CategoreScrenn> {
-    TextEditingController _searchQuery=TextEditingController();
+  
     List<PhotosModel> photos=[];
 
   //TODO: Get the categorie photo from the api
